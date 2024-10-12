@@ -1,172 +1,160 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-family: 'Courier New', Courier, monospace;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .container {
-    display: flex;
-    flex-direction: column; 
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  /* height: 100vh; */
+  width: 100%;
+  font-family: Arial, sans-serif;
+  /* background-color: #f0f0f0; */
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .title {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 50px;
-    text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  margin-top: 50px;
+  text-align: center;
 }
 .card-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+  gap: 20px;
 }
 
 .flip-card {
-    width: 300px;
-    height: 500px;
-    perspective: 1000px;
-    padding: 25px;
-    margin-bottom: 20px; /* Add space between cards when they wrap */
+  width: 300px;
+  height: 500px;
+  perspective: 1000px;
+  padding: 25px;
+  margin-bottom: 20px; /* Add space between cards when they wrap */
 }
 
 .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.2s ease-in;
-    transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.2s ease-in;
+  transform-style: preserve-3d;
 }
 
 .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
-.flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility:hidden;
-    border-radius: 10px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
 
 .flip-card-front {
-    background-color: #bbb;
-    color: black;
+  background-color: #bbb;
+  color: black;
 }
 
 .flip-card-back {
-    overflow: hidden;
-    overflow-y: auto;
-    scrollbar-width: none;
-    background-color: #000;
-    color: white;
-    transform: rotateY(180deg) rotateZ(5deg);
-    padding: 0 20px;
-    box-sizing: border-box;
+  overflow: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
+  background-color: #000;
+  color: white;
+  transform: rotateY(180deg) rotateZ(5deg);
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
-.flip-card-back h5, h2, p{
-    text-align: start;
-    margin-bottom: 4px
+.flip-card-back h5,
+h2,
+p {
+  text-align: start;
+  margin-bottom: 4px;
 }
 
-.flip-card-back p{
-    margin-top: 20px;
-    font-size: 12px;
+.flip-card-back p {
+  margin-top: 20px;
+  font-size: 12px;
 }
 
 .flip-card-back .header {
-    position: sticky;
-    top: 0; /* Stick to the top of the .flip-card-back when scrolling */
-    background-color: transparent; /* Ensure background stays consistent */
-    z-index: 0; /* Ensure it stays on top of the content while scrolling */
-    padding: 8px 0;
+  position: sticky;
+  top: 0; /* Stick to the top of the .flip-card-back when scrolling */
+  background-color: transparent; /* Ensure background stays consistent */
+  z-index: 0; /* Ensure it stays on top of the content while scrolling */
+  padding: 8px 0;
 }
 
 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    filter: brightness(70%); 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  filter: brightness(70%);
 }
 
 .image-title-1 {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: #000;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 5px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px;
 }
 .image-title-2 {
-    position: absolute;
-    top: 10px;
-    left: 5px;
-    color: #000;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 5px;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px;
 }
 .image-title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    font-size: 24px; /* Increased font size for emphasis */
-    font-weight: bold;
-    /* padding: 10px; */
-    text-align: center;
-    /* background-color: rgba(0, 0, 0, 0.5); Semi-transparent background for better readability */
-    /* border-radius: 10px; */
-    width: 80%; /* Adjust width to fit the text */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 24px; /* Increased font size for emphasis */
+  font-weight: bold;
+  /* padding: 10px; */
+  text-align: center;
+  /* background-color: rgba(0, 0, 0, 0.5); Semi-transparent background for better readability */
+  /* border-radius: 10px; */
+  width: 80%; /* Adjust width to fit the text */
 }
 
 /* Media query for mobile devices */
 @media screen and (max-width: 768px) {
-    .container {
-        height: auto;
-        padding: 20px 0;
-    }
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .title {
-        font-size: 24px;
-        margin-bottom: 30px;
-    }
+  .flip-card {
+    width: 100%;
+    max-width: 300px;
+  }
 
-    .card-container {
-        flex-direction: column;
-    }
-
-    .flip-card {
-        width: 90%;
-        max-width: 300px;
-        height: 450px;
-        padding: 15px;
-    }
-
-    .image-title {
-        font-size: 20px;
-    }
-
-    .flip-card-back h2 {
-        font-size: 18px;
-    }
-
-    .flip-card-back p {
-        font-size: 11px;
-    }
+  .title {
+    font-size: 2rem;
+  }
 }
